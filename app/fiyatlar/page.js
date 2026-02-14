@@ -3,24 +3,19 @@ import Link from "next/link";
 export const metadata = {
   title: "Fiyatlar",
   description:
-    "Bursa mezar bakım fiyatları: mermer beyazlatma, tek sefer çiçekli bakım, yıllık bakım paketi. Net fiyat için teklif alın.",
+    "Bursa mezar bakım fiyatları: tek seferlik bakım ve yıllık bakım paketi. Net fiyat için teklif alın.",
 };
 
 const FIYATLAR = [
   {
-    paket: "Mermer Beyazlatma",
-    icerik: "Beyazlatma + Temizlik",
-    fiyat: "5.000 TL",
-  },
-  {
-    paket: "Tek Sefer Çiçekli Bakım",
-    icerik: "Çiçek + Toprak + Temizlik",
-    fiyat: "6.000 – 8.500 TL",
+    paket: "Tek Seferlik Bakım",
+    icerik: "Tek seferlik mezar bakımı, temizlik ve gerekli işlemler.",
+    fiyat: "5.000₺ + KDV",
   },
   {
     paket: "Yıllık Bakım",
-    icerik: "Her şey dahil",
-    fiyat: "20.000 – 25.000 TL",
+    icerik: "Yıllık bakımda her ay düzenli bakım yapılacaktır.",
+    fiyat: "20.000 – 25.000₺ + KDV",
   },
 ];
 
@@ -35,25 +30,42 @@ export default function FiyatlarPage() {
           Net fiyat için mezar konumu ve durumuna göre teklif verilir.
         </p>
 
-        <div className="overflow-x-auto rounded-2xl border border-[var(--beige)] bg-[var(--white)] shadow-sm">
-          <table className="w-full text-left">
-            <thead>
-              <tr className="border-b border-[var(--beige)] bg-[var(--beige-light)]">
-                <th className="px-4 py-4 font-semibold text-[var(--primary)]">Paket</th>
-                <th className="px-4 py-4 font-semibold text-[var(--primary)]">İçerik</th>
-                <th className="px-4 py-4 font-semibold text-[var(--primary)]">Fiyat</th>
-              </tr>
-            </thead>
-            <tbody>
-              {FIYATLAR.map((row) => (
-                <tr key={row.paket} className="border-b border-[var(--beige)] last:border-0">
-                  <td className="px-4 py-4 font-medium text-[var(--foreground)]">{row.paket}</td>
-                  <td className="px-4 py-4 text-[var(--muted)]">{row.icerik}</td>
-                  <td className="px-4 py-4 font-semibold text-[var(--primary)]">{row.fiyat}</td>
+        <div className="space-y-4 md:space-y-0">
+          {/* Mobil: kartlar */}
+          <div className="md:hidden space-y-4">
+            {FIYATLAR.map((row) => (
+              <div
+                key={row.paket}
+                className="rounded-2xl border border-[var(--beige)] bg-[var(--white)] p-5 shadow-sm"
+              >
+                <p className="font-semibold text-[var(--primary)] text-lg mb-1">{row.paket}</p>
+                <p className="text-[var(--muted)] text-sm mb-3">{row.icerik}</p>
+                <p className="font-bold text-[var(--primary)] text-xl">{row.fiyat}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Masaüstü: tablo */}
+          <div className="hidden md:block overflow-x-auto rounded-2xl border border-[var(--beige)] bg-[var(--white)] shadow-sm">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-[var(--beige)] bg-[var(--beige-light)]">
+                  <th className="px-4 py-4 font-semibold text-[var(--primary)]">Paket</th>
+                  <th className="px-4 py-4 font-semibold text-[var(--primary)]">İçerik</th>
+                  <th className="px-4 py-4 font-semibold text-[var(--primary)]">Fiyat</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {FIYATLAR.map((row) => (
+                  <tr key={row.paket} className="border-b border-[var(--beige)] last:border-0">
+                    <td className="px-4 py-4 font-medium text-[var(--foreground)]">{row.paket}</td>
+                    <td className="px-4 py-4 text-[var(--muted)]">{row.icerik}</td>
+                    <td className="px-4 py-4 font-semibold text-[var(--primary)]">{row.fiyat}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <p className="text-center text-[var(--muted)] text-sm mt-6">

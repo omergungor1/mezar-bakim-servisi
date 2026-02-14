@@ -109,21 +109,16 @@ export default function HomePage() {
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--primary)] text-center mb-10">
             Fiyatlandırma Özeti
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             <div className="bg-[var(--white)] rounded-2xl p-6 shadow-sm border border-[var(--beige)]">
-              <p className="text-lg font-semibold text-[var(--primary)] mb-1">🌸 Tek Sefer Çiçekli Bakım</p>
-              <p className="text-sm text-[var(--muted)] mb-3">Çiçek + Toprak + Genel Temizlik</p>
-              <p className="text-xl font-bold text-[var(--foreground)]">6.000 – 8.500 TL</p>
+              <p className="text-lg font-semibold text-[var(--primary)] mb-1">Tek Seferlik Bakım</p>
+              <p className="text-sm text-[var(--muted)] mb-3">Tek seferlik mezar bakımı, temizlik ve gerekli işlemler.</p>
+              <p className="text-xl font-bold text-[var(--foreground)]">5.000₺ + KDV</p>
             </div>
             <div className="bg-[var(--white)] rounded-2xl p-6 shadow-sm border border-[var(--beige)]">
-              <p className="text-lg font-semibold text-[var(--primary)] mb-1">✨ Mermer Beyazlatma Paketi</p>
-              <p className="text-sm text-[var(--muted)] mb-3">Mermer Beyazlatma + Genel Temizlik</p>
-              <p className="text-xl font-bold text-[var(--foreground)]">5.000 TL</p>
-            </div>
-            <div className="bg-[var(--white)] rounded-2xl p-6 shadow-sm border border-[var(--beige)]">
-              <p className="text-lg font-semibold text-[var(--primary)] mb-1">💧 Yıllık Bakım Paketi</p>
-              <p className="text-sm text-[var(--muted)] mb-3">Çiçek + Toprak + İlaçlama + Temizlik + Sulama + Anlık Resim</p>
-              <p className="text-xl font-bold text-[var(--foreground)]">20.000 – 25.000 TL</p>
+              <p className="text-lg font-semibold text-[var(--primary)] mb-1">Yıllık Bakım</p>
+              <p className="text-sm text-[var(--muted)] mb-3">Her ay düzenli bakım yapılacaktır.</p>
+              <p className="text-xl font-bold text-[var(--foreground)]">20.000 – 25.000₺ + KDV</p>
             </div>
           </div>
           <div className="text-center mt-8">

@@ -11,16 +11,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-[var(--white)]/95 backdrop-blur border-b border-[var(--beige)]">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex flex-wrap items-center gap-2 sm:gap-3">
           <Image
             src="/logo.png"
             alt="Mezar Bakım Servisi"
             width={120}
             height={48}
-            className="h-10 w-auto object-contain"
+            className="h-10 w-auto object-contain shrink-0"
             priority
           />
-          <span className="font-semibold text-[var(--primary)] text-lg hidden sm:inline">
+          <span className="font-semibold text-[var(--primary)] text-sm sm:text-lg leading-tight min-w-0">
             Mezar Bakım Servisi
           </span>
         </Link>
